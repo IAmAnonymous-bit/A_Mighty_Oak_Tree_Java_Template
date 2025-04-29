@@ -3,12 +3,41 @@
  */
 package org.example;
 
-public class App {
-    public String getGreeting() {
+public class App 
+{
+    public String getGreeting()
+    {
         return "Hello World!";
+
     }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+    public static void main(String[] args) 
+    {
+        //System.out.println(new App().getGreeting());
+        Squirrel s1 = new Squirrel("Cheeks");
+        Squirrel s2 = new Squirrel("Squeaks");
+        Squirrel s3 = new Squirrel("Sandy");
+        Squirrel s4 = new Squirrel("Rick");
+        Squirrel s5 = new Squirrel("Marty");
+        Squirrel s6 = new Squirrel("Augustine");
+        Squirrel s7 = new Squirrel("Phat Gus");
+        TreeNode root = new TreeNode(s1);
+        TreeNode l = new TreeNode(s2);
+        TreeNode r = new TreeNode(s3);
+        TreeNode ll = new TreeNode(s4);
+        TreeNode lr = new TreeNode(s5);
+        TreeNode rl = new TreeNode(s6);
+        TreeNode rr = new TreeNode(s7);
+        root.set_left(l);
+        root.set_right(r);
+        l.set_left(ll);
+        l.set_right(lr);
+        r.set_left(rl);
+        r.set_right(rr);
+
+        TreeTraverser traverser = new TreeTraverser();
+        traverser.printTree(root);
+
     }
+    
 }
